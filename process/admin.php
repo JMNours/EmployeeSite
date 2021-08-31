@@ -1,3 +1,7 @@
 <?php 
   session_start();
-  $admin=array('login'=>md5('admin'),'password'=>md5('password'));
+
+  $login='admin';
+  $password='password';
+
+  $_SESSION['admin']=array('login'=>md5($login),'password'=>md5($password));

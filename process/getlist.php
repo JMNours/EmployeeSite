@@ -6,18 +6,21 @@
   foreach($list as $note){
     ?>
       <div class="note">
-        <p>Фамилия : <?=$note['LastName'] ?></p>
-        <p>Имя : <?=$note['NAME']?></p>
-        <p>Отчество : <?=$note['FatherName']?></p>
-        <p>Должность : <?=$note['POSITION']?></p>
-        <p>Дата устройтсва на работу : <?=$note['HireDate']?></p>
-        <p>Месяцев на работе : 
+        <p><b>Фамилия</b> :  <u><?=$note['LastName'] ?></u></p>
+        <p><b>Имя : </b>  <u><?=$note['NAME']?></u></p>
+        <p><b>Отчество : </b>  <u><?=$note['FatherName']?></u></p>
+        <p><b>Инициалы : </b>
+        <u><?=$note['LastName'] .' '. mb_substr($note['NAME'],0,1) .'.'. mb_substr($note['FatherName'],0,1).'.' ?>
+        </u></p>
+        <p><b>Должность : </b>  <u><?=$note['POSITION']?></u></p>
+        <p><b>Дата устройтсва на работу : </b>  <u><?=$note['HireDate']?></u></p>
+        <p><b>Месяцев на работе : </b> <u>
           <?php
-            // $d1 = new dateTime();
-            // $d2 = new dateTime(strtotime($note['HireDate']));
-            // $interval = $d2->diff($d1);
-            // $interval->format('%m months');
-          ?>
+            $now = new DateTime();
+            $date = DateTime::createFromFormat('Y-m-d',$note['HireDate']);
+            $interval = $now->diff($date);
+            echo $interval->format('%m').' месяцев';
+          ?></u>
         <form action="../process/edit.php?id=<?=$note['id'] ?>" method="POST">
           <input type="submit" value="Редактировать" class="btn">
         </form>

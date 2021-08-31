@@ -1,5 +1,5 @@
 <?php
   session_start();
-  $_SESSION['userAuthorized']=FALSE;
+  $_SESSION['userAuthorized'] = FALSE;
   header('Location:../');
 ?>

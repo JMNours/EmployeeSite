@@ -24,6 +24,11 @@
   font-size: 15px;
   border-bottom: 1px solid #b4b2b2;
 }
+div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
 
 body {
   background: linear-gradient(to left, #76b852, #8DC26F);
@@ -31,6 +36,7 @@ body {
 }
 .btn {
   border:0;
+  max-width: 5%;
 }
 
 .shine {
@@ -68,13 +74,4 @@ header input, label{
 
 header label {
   border-bottom: 1px dotted #b4b2b2;
-}
-.note {
-  border:1px dotted #b4b2b2;
-  margin-bottom: 20px;;
-}
-.note p {
-  font-family: "Roboto", sans-serif;
-  margin: 5px;
-  text-align: left;
 }
