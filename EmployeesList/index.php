@@ -24,6 +24,9 @@
   <main>
     <div class="form">
         <h1>Сотрудники</h1>
+        <form action="../Registry/">
+          <input type="submit" value="Добавить Сотрудника" class="btn">
+        </form>
         <?php
           require_once '../process/getlist.php';
         ?>

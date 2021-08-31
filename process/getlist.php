@@ -1,8 +1,8 @@
 <?php
   require_once 'connectdb.php';
-  $sql="SELECT * FROM `employeeslist`";
-  $list=(mysqli_query($connect, $sql));
-  $list=mysqli_fetch_all($list,MYSQLI_ASSOC);
+  $sql=$connect->prepare("SELECT * FROM `employeeslist`");
+  $sql->execute();
+  $list=$sql->get_result()->fetch_all(MYSQLI_ASSOC);
   foreach($list as $note){
     ?>
       <div class="note">
@@ -18,7 +18,7 @@
             // $interval = $d2->diff($d1);
             // $interval->format('%m months');
           ?>
-        <form action="../Registry/index.php?id=<?=$note['id'] ?><">
+        <form action="../process/edit.php?id=<?=$note['id'] ?>" method="POST">
           <input type="submit" value="Редактировать" class="btn">
         </form>
         <form action="../process/delete.php?id=<?=$note['id']?>" method="POST">

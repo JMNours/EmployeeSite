@@ -24,18 +24,18 @@
     </header>
     <main>
       <div class="form">
-        <form method="GET" action="../process/edit.php">
+        <form method="POST" action="../process/edit.php?id=<?=$_GET['id']?>">
           <h1>Редактирование</h1>
           <lable>Фамилия</lable>
-          <input type="text" class="textInput" name="lastname">
+          <input type="text" class="textInput" name="lastname" value="<?=$_GET['lastname']?>">
           <lable>Имя</lable>
-          <input type="text" class="textInput" name="name">
+          <input type="text" class="textInput" name="name" value="<?=$_GET['name']?>">
           <lable>Отчество</lable>
-          <input type="text" class="textInput" name="fathername">
+          <input type="text" class="textInput" name="fathername" value="<?=$_GET['fathername']?>">
           <lable>Должность</lable>
-          <input type="text" class="textInput" name="position">
+          <input type="text" class="textInput" name="position" value="<?=$_GET['position']?>">
           <lable>Дата устройтсва на работу</lable>
-          <input type="text" class="textInput" name="date">
+          <input type="date" class="textInput" name="date" value="<?=$_GET['date']?>">
           <input class="btn" type="submit" value="Редактировать">
         </form>
     </div>

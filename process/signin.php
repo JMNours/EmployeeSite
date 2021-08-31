@@ -3,10 +3,10 @@
   $_SESSION['userAuthorized'] = FALSE;
   require_once 'admin.php';
 
-  $login=$_POST['login'];
-  $password=$_POST['password'];
+  $login=htmlspecialchars($_POST['login']);
+  $password=htmlspecialchars($_POST['password']);
 
-  if($admin['login']==$login && $admin['password']==$password){
+  if($admin['login']==md5($login) && $admin['password']==md5($password)){
     if($_SESSION['message'])
     {
       unset($_SESSION['message']);
