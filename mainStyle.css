@@ -69,3 +69,12 @@ header input, label{
 header label {
   border-bottom: 1px dotted #b4b2b2;
 }
+.note {
+  border:1px dotted #b4b2b2;
+  margin-bottom: 20px;;
+}
+.note p {
+  font-family: "Roboto", sans-serif;
+  margin: 5px;
+  text-align: left;
+}

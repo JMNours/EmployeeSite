@@ -1,7 +1,7 @@
 <?php
   session_start();
   if($_SESSION['userAuthorized']){
-    header('Location:Registry');
+    header('Location:EmployeesList');
   }
 ?>
 

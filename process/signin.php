@@ -1,7 +1,6 @@
 <?php
   session_start();
   $_SESSION['userAuthorized'] = FALSE;
-  require_once 'addDB.php';
   require_once 'admin.php';
 
   $login=$_POST['login'];

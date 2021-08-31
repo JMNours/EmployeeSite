@@ -3,6 +3,7 @@
   if(!$_SESSION['userAuthorized']){
     header('Location:../');
   }
+  require_once '../process/connectdb.php';
 ?>
 
 <!DOCTYPE html>
@@ -22,8 +23,8 @@
       </form>
     </header>
     <main>
-      <div class="form" method="GET">
-        <form>
+      <div class="form">
+        <form method="GET" action="../process/edit.php">
           <h1>Редактирование</h1>
           <lable>Фамилия</lable>
           <input type="text" class="textInput" name="lastname">
@@ -35,7 +36,7 @@
           <input type="text" class="textInput" name="position">
           <lable>Дата устройтсва на работу</lable>
           <input type="text" class="textInput" name="date">
-            <input class="btn" type="submit" value="Зарегистрировать">
+          <input class="btn" type="submit" value="Редактировать">
         </form>
     </div>
     </main>

@@ -3,6 +3,7 @@
   if(!$_SESSION['userAuthorized']){
     header('Location:../');
   }
+  require_once '../process/connectdb.php';
 ?>
 
 <!DOCTYPE html>
@@ -22,12 +23,10 @@
   </header>
   <main>
     <div class="form">
-      <form>
-        <p>Сотрудники</p>
+        <h1>Сотрудники</h1>
         <?php
-
+          require_once '../process/getlist.php';
         ?>
-      </form>
     </div>
   </main>
 </html>
