@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  if($_SESSION['userAuthorized']){
+    header('Location:Registry');
+  }
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,14 +14,17 @@
   </head>
   <body>
     <main>
-      <div class="form" method="GET">
-        <form>
+      <div class="form">
+        <form action="process/signin.php" method="POST"> 
           <h1>Авторизация</h1>
-          <p>Логин</p>
+          <lable>Логин</lable>
           <input type="text" class="textInput" name="login">
-          <p>Пароль</p>
+          <lable>Пароль</lable>
           <input type="password" class="textInput" name="password">
           <input class="btn" type="submit" value="Войти">
+          <p class="msg">
+          <?php echo $_SESSION['message']  ?>
+          </p>
         </form>
       </div>
     </main>

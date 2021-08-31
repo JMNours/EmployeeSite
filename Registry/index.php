@@ -1,24 +1,39 @@
+<?php
+  session_start();
+  if(!$_SESSION['userAuthorized']){
+    header('Location:../');
+  }
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
     <link rel="stylesheet" href="..\mainStyle.css">
-    <script href="..\jQuery 3.6.1.js"></script>
-    <script href="..\mainScript.js"></script>
+    <script type ="text/javascript" src="..\jQuery 3.6.1.js"></script>
+    <script type ="text/javascript" src="..\mainScript.js"></script>
   </head>
   <body>
+    <header>
+      <form method="POST" action="../process/logout.php">
+        <nav>
+          <label>Вы авторизированиы.</label>
+          <input type="submit"value="Выйти" class="btn">
+        </nav>
+      </form>
+    </header>
     <main>
       <div class="form" method="GET">
         <form>
           <h1>Редактирование</h1>
-          <p>Фамилия</p>
+          <lable>Фамилия</lable>
           <input type="text" class="textInput" name="lastname">
-          <p>Имя</p>
+          <lable>Имя</lable>
           <input type="text" class="textInput" name="name">
-          <p>Отчество</p>
+          <lable>Отчество</lable>
           <input type="text" class="textInput" name="fathername">
-          <p>Должность</p>
+          <lable>Должность</lable>
           <input type="text" class="textInput" name="position">
-          <p>Дата устройтсва на работу</p>
+          <lable>Дата устройтсва на работу</lable>
           <input type="text" class="textInput" name="date">
             <input class="btn" type="submit" value="Зарегистрировать">
         </form>
